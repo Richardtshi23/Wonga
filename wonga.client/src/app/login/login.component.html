@@ -1,0 +1,40 @@
+<div class="auth-page">
+  <div class="form-column">
+    <div class="form-container">
+      <div *ngIf="registrationSuccess" class="success-message">
+        Registration successful! Please log in to continue.
+      </div>
+
+      <h1 class="auth-title">Welcome to wonga</h1>
+      <p class="auth-subtitle"> 
+         <a routerLink="/register">Create an account</a>
+      </p>
+
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+
+      <form [formGroup]="form" (ngSubmit)="submit()" class="auth-form">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input id="email" type="email" formControlName="email" placeholder="Richard@example.com">
+          <div *ngIf="email.invalid && email.touched" class="error">
+            <span *ngIf="email.errors?.['required']">Email is required.</span>
+            <span *ngIf="email.errors?.['email']">Please enter a valid email.</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="password-wrapper">
+            <input id="password" [type]="showPassword ? 'text' : 'password'" formControlName="password" placeholder="Enter your password">
+          </div>
+          <div *ngIf="password.invalid && password.touched" class="error">Password is required.</div>
+        </div>
+        <button type="submit" class="auth-cta" [disabled]="submitting">
+          {{ submitting ? 'Logging In...' : 'Log In' }}
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

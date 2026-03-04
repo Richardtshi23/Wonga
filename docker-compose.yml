@@ -1,0 +1,25 @@
+services:
+  db:
+    image: postgres:16
+    container_name: wonga_db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: wonga_auth
+    ports:
+      - "5432:5432"
+
+  api:
+    build:
+      context: ./Wonga.Server
+      dockerfile: Dockerfile
+    container_name: wonga_api
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=wonga_auth;Username=admin;Password=password123
+      - Jwt__Key=YourSuperSecretKeyThatIsAtLeast32CharsLong!!
+      - Jwt__Issuer=WongaServer
+      - Jwt__Audience=WongaClient
+    ports:
+      - "7025:8080"
+    depends_on:
+      - db

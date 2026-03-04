@@ -1,0 +1,49 @@
+.details-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  font-family: sans-serif;
+}
+
+.details-card {
+  width: 320px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+.header h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.info-group {
+  margin: 15px 0;
+}
+
+  .info-group label {
+    font-size: 0.75rem;
+    color: #777;
+    font-weight: bold;
+  }
+
+  .info-group p {
+    margin: 4px 0;
+    font-size: 1rem;
+  }
+
+.error-state {
+  text-align: center;
+  color: #666;
+}
+
+.login-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}

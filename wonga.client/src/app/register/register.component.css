@@ -1,0 +1,150 @@
+:root {
+  --font-primary: 'Inter', sans-serif;
+  --font-display: 'Cormorant Garamond', serif;
+  --color-accent: #c79a3b;
+  --color-primary-text: #1a1a1a;
+  --color-border: #e5e5e5;
+}
+
+.auth-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+.form-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-title {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary-text);
+}
+
+.auth-subtitle {
+  color: #555;
+  margin-bottom: 2.5rem;
+}
+
+  .auth-subtitle a {
+    color: #c79a3b;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+  .form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-group input, .form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: white;
+  }
+
+    .form-group input.ng-invalid.ng-touched {
+      border-color: #e63946;
+    }
+
+.error {
+  font-size: 0.8rem;
+  color: #b91c1c;
+  margin-top: 0.25rem;
+}
+
+.auth-cta {
+  width: 100%;
+  background: #c79a3b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+  .auth-cta:hover {
+    background-color: #a88234;
+  }
+
+  .auth-cta:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+
+.optional-section {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+  .optional-section legend {
+    padding: 0 0.5rem;
+    font-weight: 500;
+    color: var(--color-primary-text);
+  }
+
+    .optional-section legend span {
+      font-weight: 400;
+      color: #777;
+      font-size: 0.9em;
+    }
+
+.form-group.half-width {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+  .form-group.half-width > * {
+    flex: 1;
+  }
+
+.select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+  .select-wrapper::after {
+    content: '▼';
+    font-size: 0.8rem;
+    color: #888;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}

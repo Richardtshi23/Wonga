@@ -11,3 +11,5 @@ bash or use gitbash or cmd doesn't matter
 docker-compose up --build
 
 and just Like that the App will be "cruising nicely without fear of contradiction".
+
+GitRepo: https://github.com/Richardtshi23/Wonga
